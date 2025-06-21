@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Matthis Guyomard - développeur & futur expert en cybersécurité.">
+    <title>Matthis Guyomard - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+        <div class="loading-container">
+            <div class="loading-text">Initialisation du système<span class="blink">...</span></div>
+            <div class="loading-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="percentage" id="percentage">0%</div>
+        </div>
+    </div>
+
+    <div class="screen">
+        <!-- TV Static Canvas -->
+        <canvas id="tv-static"></canvas>
+    <div id="terminal">
+      <header>
+        <div class="line">Bienvenue sur le Portfolio de Matthis Guyomard</div>
+        <div class="line">
+              .,-:;//;:=,
+         . :H@@@MM@M#H/.,+%;,
+      ,/X+ +M@@M@MM%=,-%HMMM@X/,
+     -+@MM; $M@@MH+-,;XMMMM@MMMM@+-
+    ;@M@@M- XM@X;. -+XXXXXHHH@M@M#@/.
+  ,%MM@@MH ,@%=            .---=-=:=,.
+  -@#@@@MX .,              -%HX$$%%%+;
+ =-./@M@M$                  .;@MMMM@MM:
+ X@/ -$MM/                    .+MM@@@M$
+,@M@H: :@:                    . -X#@@@@-
+,@@@MMX, .                    /H- ;@M@M=
+.H@@@@M@+,                    %MM+..%#$.
+ /MMMM@MMH/.                  XM@MH; -;
+  /%+%$XHH@$=              , .H@@@@MX,
+   .=--------.           -%H.,@@@@@MX,
+   .%MM@@@HHHXX$$$%+- .:$MMX -M@@MM%.
+     =XMMM@MM@MM#H;,-+HMM@M+ /MMMX=
+       =%@M@M#@$-.=$@MM@@@M; %M%=
+         ,:+$+-,/H#MMMMMMM@- -,
+               =++%%%%+/:-.
+        </div>
+        <div class="line">Tapez "help" pour voir les commandes disponibles.</div>
+        </header>
+        <main>
+            <div id="output"></div>
+        </main>
+        <footer>
+            <div id="input-line">
+            <span id="prompt">&gt;</span>
+            <input type="text" id="cmd" autofocus />
+            </div>
+        </footer>
+    </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
