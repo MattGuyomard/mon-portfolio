@@ -129,7 +129,7 @@ const commands = {
     Numéro de téléphone : +33652217407
     Adresse e-mail : matthis.guyomard@hotmail.com
     Linkedin : <a href="https://www.linkedin.com/in/matthis-guyomard/">https://www.linkedin.com/in/matthis-guyomard/</a>
-    <a href="../ressources/guyomard-matthis-cv.pdf" download="guyomard-matthis-cv.pdf">Télécharger mon CV</a></p>`,
+    <a href="ressources/guyomard-matthis-cv.pdf" download="guyomard-matthis-cv.pdf">Télécharger mon CV</a></p>`,
 
     cat: `
                 _                       
