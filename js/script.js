@@ -129,8 +129,7 @@ const commands = {
                     ✓ Déploiement d’un Active Directory complet avec gestion des utilisateurs, groupes, stratégies de sécurité (GPO) et profils itinérants.
                     ✓ Configuration de partages réseau sécurisés avec droits NTFS adaptés.
                     ✓ Cloisonnement réseau et gestion des pare-feu avec OPNsense pour isoler les VLANs.
-                    ✓ Hébergement d’un service Web en HTTPS avec certificats PKI internes et déploiement d’un reverse proxy NGINX en DMZ.
-                </p>
+                    ✓ Hébergement d’un service Web en HTTPS avec certificats PKI internes et déploiement d’un reverse proxy NGINX en DMZ.</p>
             </div>
         </div>
     `,
