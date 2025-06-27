@@ -122,6 +122,16 @@ const commands = {
                 ✓ Réalisation de tests pratiques de configuration de commutateurs et routeurs Cisco en utilisant les protocoles LACP, VTP, DTP, STP, DHCP, RIP et OSPF.
                 ✓ Acquisition d’une expérience concrète dans la gestion des réseaux locaux et interréseaux, avec un focus sur la stabilité et l’optimisation du trafic.</p>
             </div>
+            <div class="project-card">
+                <h3>Mise en place d’une infrastructure informatique sécurisée et centralisée</h3>
+                <p>
+                    ✓ Conception de l’architecture réseau avec segmentation en VLANs et plages IP dédiées pour l’infrastructure, les utilisateurs, les serveurs et la DMZ.
+                    ✓ Déploiement d’un Active Directory complet avec gestion des utilisateurs, groupes, stratégies de sécurité (GPO) et profils itinérants.
+                    ✓ Configuration de partages réseau sécurisés avec droits NTFS adaptés.
+                    ✓ Cloisonnement réseau et gestion des pare-feu avec OPNsense pour isoler les VLANs.
+                    ✓ Hébergement d’un service Web en HTTPS avec certificats PKI internes et déploiement d’un reverse proxy NGINX en DMZ.
+                </p>
+            </div>
         </div>
     `,
     contact: `
