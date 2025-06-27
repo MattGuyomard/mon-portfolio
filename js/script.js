@@ -107,36 +107,29 @@ const commands = {
             <div class="project-card">
                 <h3>Outil d'automatisation & d’analyse du marché Bitskin</h3>
                 <p>
-                ✓ Développement d’un logiciel utilisant l’API de Bitskin afin d’automatiser les opérations commerciales et 
-                   d’analyser les tendances du marché en temps réel.
-                ✓ Responsable de la supervision et de l’adaptation de la traduction du site Bitskin en version française.</p>
+  ✓ Développement d’un logiciel utilisant l’API de Bitskin afin d’automatiser les opérations commerciales et d’analyser les tendances du marché en temps réel.
+  ✓ Responsable de la supervision et de l’adaptation de la traduction du site Bitskin en version française.</p>
             </div>
             <div class="project-card">
                 <h3>Site web de réservation pour l’hôtel Ezdan Palace</h3>
                 <p>
-                ✓ Développement d’un site vitrine avec système de gestion des réservations pour l’hôtel Ezdan Palace, conçu en HTML,
-                   CSS, PHP et JavaScript, et connecté à une base de données MySQL.
-                ✓ Mise en place d’une interface utilisateur responsive permettant la consultation des
-                   chambres disponibles et l’enregistrement des réservations en ligne.</p>
+  ✓ Développement d’un site vitrine avec système de gestion des réservations pour l’hôtel Ezdan Palace, conçu en HTML, CSS, PHP et JavaScript, et connecté à une base de données MySQL.
+  ✓ Mise en place d’une interface utilisateur responsive permettant la consultation des chambres disponibles et l’enregistrement des réservations en ligne.</p>
             </div>
             <div class="project-card">
                 <h3>Tests de switching et routage sur Cisco</h3>
                 <p>
-                ✓ Réalisation de tests pratiques de configuration de commutateurs et routeurs Cisco en utilisant les
-                   protocoles LACP, VTP, DTP, STP, DHCP, RIP et OSPF.
-                ✓ Acquisition d’une expérience concrète dans la gestion des réseaux locaux et interréseaux, avec un focus sur
-                   la stabilité et l’optimisation du trafic.</p>
+  ✓ Réalisation de tests pratiques de configuration de commutateurs et routeurs Cisco en utilisant les protocoles LACP, VTP, DTP, STP, DHCP, RIP et OSPF.
+  ✓ Acquisition d’une expérience concrète dans la gestion des réseaux locaux et interréseaux, avec un focus sur la stabilité et l’optimisation du trafic.</p>
             </div>
             <div class="project-card">
                 <h3>Mise en place d’une infrastructure informatique sécurisée et centralisée</h3>
                 <p>
-                    ✓ Conception de l’architecture réseau avec segmentation en VLANs et plages IP dédiées pour
-                       l’infrastructure, les utilisateurs, les serveurs et la DMZ.
-                    ✓ Déploiement d’un Active Directory complet avec gestion des utilisateurs, groupes,
-                       stratégies de sécurité (GPO) et profils itinérants.
-                    ✓ Configuration de partages réseau sécurisés avec droits NTFS adaptés.
-                    ✓ Cloisonnement réseau et gestion des pare-feu avec OPNsense pour isoler les VLANs.
-                    ✓ Hébergement d’un service Web en HTTPS avec certificats PKI internes et déploiement d’un reverse proxy NGINX en DMZ.</p>
+  ✓ Conception de l’architecture réseau avec segmentation en VLANs et plages IP dédiées pour l’infrastructure, les utilisateurs, les serveurs et la DMZ.
+  ✓ Déploiement d’un Active Directory complet avec gestion des utilisateurs, groupes, stratégies de sécurité (GPO) et profils itinérants.
+  ✓ Configuration de partages réseau sécurisés avec droits NTFS adaptés.
+  ✓ Cloisonnement réseau et gestion des pare-feu avec OPNsense pour isoler les VLANs.
+  ✓ Hébergement d’un service Web en HTTPS avec certificats PKI internes et déploiement d’un reverse proxy NGINX en DMZ.</p>
             </div>
         </div>
     `,
