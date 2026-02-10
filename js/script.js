@@ -75,66 +75,91 @@ const terminal = document.getElementById('terminal');
 
 const commands = {
   help:
-`Commandes disponibles:
-about     - À propos de moi
-projects  - Affiche mes réalisations
-skills    - Compétences clés
-contact   - Mes coordonnées
-clear     - Efface l'écran
-help      - Affiche cette aide
-cat       - Affiche un chat..`,
+  `Commandes disponibles :
+  └─ about     : À propos de moi
+  └─ projects  : Affiche mes réalisations
+  └─ skills    : Compétences clés
+  └─ contact   : Mes coordonnées
+  └─ clear     : Efface l'écran
+  └─ help      : Affiche cette aide
+  └─ cat       : Affiche un chat..`,
 
-  about: `
-<h2>Profil</h2>
-<p><strong>Matthis GUYOMARD</strong> — <strong>Administrateur Systèmes, Réseaux & Cybersécurité (Junior)</strong><br>
-21 ans — Chatou (78400), France</p>
+  about:
+  `<h2>Profil</h2>
+  Matthis <strong>GUYOMARD</strong>
+  └─ Administrateur Systèmes, Réseaux & Cybersécurité (Junior)
+  └─ 21 ans — Chatou (78400), France
 
-<h2>Disponibilité</h2>
-<p><strong>Stage :</strong> du <strong>1 juin</strong> au <strong>23 octobre 2026</strong></p>
+  <h2>Disponibilité</h2>
+  Stage : <strong>1 juin → 23 octobre 2026</strong>
 
-<h2>Parcours</h2>
-<p>
-• <strong>IPSSI</strong> — Bachelor Informatique (2e année) — Depuis janvier 2025<br>
-• <strong>42</strong> — Développement C / Shell / GitHub — Juin 2024 → Septembre 2024<br>
-• Bac Général — Mention AB (NSI 20/20) — 2020 → 2022
-</p>
+  <h2>Parcours</h2>
+  ▸ IPSSI — Bachelor Informatique (2e année) (Depuis janvier 2025)
+  &nbsp;&nbsp;└─ Systèmes, réseaux, virtualisation, cybersécurité & développement
+  ▸ 42 (Juin 2024 → Septembre 2024)
+  &nbsp;&nbsp;└─ C • Git/GitHub • pair-programming
+  ▸ Bac Général — Mention AB (NSI 20/20) (2020 → 2022)
 
-<h2>Expériences</h2>
-<p>
-• <strong>Vinci Construction Grands Projets</strong> — Administrateur Systèmes & Réseaux (Stagiaire) — Août 2025 → Octobre 2025<br>
-&nbsp;&nbsp;→ Dev outils CMDB, automatisation supervision/inventaire, documentation infra & flux (Windows/Linux/virt/cyber)<br>
-• <strong>Bitskins</strong> — Développeur Python (Freelance) — Janvier 2024 → Février 2024<br>
-&nbsp;&nbsp;→ Automatisation Python + exploitation d’API, analyse temps réel<br>
-• <strong>Carrefour</strong> — Driver — Novembre 2022 → Août 2025
-</p>
-`,
+  <h2>Expériences</h2>
+  ▸ Vinci Construction Grands Projets — Admin Systèmes & Réseaux (Stagiaire) (Août 2025 → Octobre 2025)
+  &nbsp;&nbsp;├─ Dev outils CMDB
+  &nbsp;&nbsp;├─ Automatisation supervision / inventaire
+  &nbsp;&nbsp;└─ Documentation infra & flux (Windows/Linux/virt/cyber)
 
-  skills: `
-<h2>Compétences clés</h2>
-<p>
-<strong>Réseau & sécurité :</strong> CCNA1/2, DHCP, VLAN/VPN, DNS/NAT, SSL/TLS, Reverse Proxy, OSINT, XSS/SQLi, CVE/CVSS<br>
-<strong>Systèmes & virtualisation :</strong> Windows Server 2019/2022, Debian/Ubuntu, AD/GPO, VMware, VirtualBox, Hyper-V<br>
-<strong>Outils :</strong> Nmap, Hydra, Gobuster, FFUF<br>
-<strong>Dev :</strong> Python (avancé), C (avancé), HTML/CSS (avancé), PHP/JS/C# (bon niveau), API REST, client/serveur<br>
-<strong>Web/BDD :</strong> Apache2, Nginx, MySQL/MariaDB<br>
-<strong>Méthodes :</strong> Agile (avancé), UML, gestion de projet
-</p>
+  ▸ Bitskins — Développeur Python (Freelance) (Janvier 2024 → Février 2024)
+  &nbsp;&nbsp;├─ Automatisation Python + exploitation API externe
+  &nbsp;&nbsp;└─ Analyse / traitement de données temps réel
 
-<h2>Certifications</h2>
-<p>TryHackMe (2025 → 2028) : Jr Penetration Tester, Cyber Security 101, Web Fundamentals, Pre Security</p>
-`,
+  ▸ Carrefour — Driver (Novembre 2022 → Août 2025)
+  </p>`,
 
-  projects: `
-<h2>Mes projets</h2>
+  skills: 
+  `<h2>Compétences</h2>
+  ▸ Réseau & Cybersécurité
+  &nbsp;&nbsp;├─ Cisco CCNA1/2 • DHCP • VLAN/VPN
+  &nbsp;&nbsp;├─ DNS/NAT • SSL/TLS • Reverse Proxy (Nginx)
+  &nbsp;&nbsp;├─ Nmap • Hydra • Gobuster • FFUF
+  &nbsp;&nbsp;└─ XSS/SQLi • CVE/CVSS • OSINT
+
+  ▸ Systèmes & Virtualisation
+  &nbsp;&nbsp;├─ Windows Server 2019/2022 • Active Directory/GPO
+  &nbsp;&nbsp;├─ Debian/Ubuntu (avancé)
+  &nbsp;&nbsp;├─ VMware • VirtualBox • Hyper-V
+  &nbsp;&nbsp;└─ Shell Linux • PowerShell (bon niveau)
+
+  ▸ Développement
+  &nbsp;&nbsp;├─ Python (avancé) • C (avancé)
+  &nbsp;&nbsp;├─ HTML/CSS (avancé)
+  &nbsp;&nbsp;└─ PHP/JavaScript/C# (bon niveau) • API REST • Client/Serveur
+
+  ▸ Web / BDD / Hébergement
+  &nbsp;&nbsp;├─ MySQL/MariaDB
+  &nbsp;&nbsp;├─ Apache2 • Nginx
+  &nbsp;&nbsp;└─ Certificats (Let's Encrypt) • Reverse proxy • HTTPS
+
+  ▸ Méthodes & Gestion
+  &nbsp;&nbsp;├─ Agile (avancé) • UML
+  &nbsp;&nbsp;└─ Gestion de projet
+
+  <h2>Certifications</h2>
+  TryHackMe (2025 → 2028)
+  └─ Jr Penetration Tester
+  └─ Cyber Security 101
+  └─ Web Fundamentals
+  └─ Pre Security
+  </p>`,
+
+  projects:
+  `<h2>Mes projets</h2>
 <div class="projects-grid">
 
   <div class="project-card">
     <h3>Refonte sécurisée & modernisation d’infrastructure — DataNova</h3>
     <p>
-✓ Maquette complète sur <strong>Proxmox VE</strong> (VM/LXC), avec <strong>RBAC</strong>, accès admin durci (HTTPS only, MFA, restrictions IP/VPN) et <strong>HA cluster</strong>.<br>
-✓ Cloisonnement réseau : <strong>Admin / Infra / Prod / DMZ</strong>, filtrage inter-zones, comparaison <strong>Linux natif (nftables)</strong> vs solution type <strong>OPNsense/pfSense</strong> (justifications).<br>
-✓ Extension hybride <strong>AWS</strong> : VPN site-à-site, choix services (EC2/RDS/S3/WAF/Auto Scaling) et environnement de test.<br>
-✓ Deux refontes : <strong>Microsoft (AD hardening + redondance)</strong> et <strong>Linux/Open Source</strong> (annuaire, DNS, DHCP, updates centralisées).<br>
+✓ Maquette complète sur <strong>Proxmox VE</strong> (VM/LXC), avec <strong>RBAC</strong>, accès admin durci (HTTPS only, MFA, restrictions IP/VPN) et <strong>HA cluster</strong>.
+✓ Cloisonnement réseau : <strong>Admin / Infra / Prod / DMZ</strong>, filtrage inter-zones, comparaison <strong>Linux natif (nftables)</strong> vs solution type <strong>OPNsense/pfSense</strong> (justifications).
+✓ Extension hybride <strong>AWS</strong> : VPN site-à-site, choix services (EC2/RDS/S3/WAF/Auto Scaling) et environnement de test.
+✓ Deux refontes : <strong>Microsoft (AD hardening + redondance)</strong> et <strong>Linux/Open Source</strong> (annuaire, DNS, DHCP, updates centralisées).
 ✓ Bastion / jump host, templates Linux sécurisés (ANSSI/CIS), automatisations (CSV → annuaire, backups DB, déploiement web conteneurs), centralisation logs & conformité.
     </p>
   </div>
@@ -142,9 +167,9 @@ cat       - Affiche un chat..`,
   <div class="project-card">
     <h3>API REST Rogue-Lite — Node.js / Express</h3>
     <p>
-✓ Conception d’une <strong>API REST</strong> pour un jeu rogue-lite tour par tour (toutes actions via HTTP).<br>
-✓ Ressources : User/Auth, Player, Game, Room, Monster (+ Items).<br>
-✓ <strong>JWT + rôles</strong> (admin/player), endpoints admin sécurisés (ajout monstres/objets).<br>
+✓ Conception d’une <strong>API REST</strong> pour un jeu rogue-lite tour par tour (toutes actions via HTTP).
+✓ Ressources : User/Auth, Player, Game, Room, Monster (+ Items).
+✓ <strong>JWT + rôles</strong> (admin/player), endpoints admin sécurisés (ajout monstres/objets).
 ✓ Front web minimal (fetch) + documentation <strong>README</strong> + bonus possible : Docker (API + front) + Nginx reverse proxy.
     </p>
   </div>
@@ -152,7 +177,7 @@ cat       - Affiche un chat..`,
   <div class="project-card">
     <h3>Outil d’automatisation & d’analyse du marché Bitskins</h3>
     <p>
-✓ Développement d’un logiciel exploitant l’API Bitskins pour automatiser des opérations et analyser des tendances en temps réel.<br>
+✓ Développement d’un logiciel exploitant l’API Bitskins pour automatiser des opérations et analyser des tendances en temps réel.
 ✓ Adaptation et supervision de la traduction FR du site.
     </p>
   </div>
@@ -160,7 +185,7 @@ cat       - Affiche un chat..`,
   <div class="project-card">
     <h3>Site de réservation — Hôtel Ezdan Palace</h3>
     <p>
-✓ Site vitrine + gestion des réservations (HTML/CSS/PHP/JS) connecté à une base <strong>MySQL</strong>.<br>
+✓ Site vitrine + gestion des réservations (HTML/CSS/PHP/JS) connecté à une base <strong>MySQL</strong>.
 ✓ Interface responsive : consultation des chambres et enregistrement des réservations.
     </p>
   </div>
@@ -168,7 +193,7 @@ cat       - Affiche un chat..`,
   <div class="project-card">
     <h3>Tests switching & routage Cisco</h3>
     <p>
-✓ Configurations et tests : LACP, VTP, DTP, STP, DHCP, RIP, OSPF.<br>
+✓ Configurations et tests : LACP, VTP, DTP, STP, DHCP, RIP, OSPF.
 ✓ Optimisation trafic, stabilité LAN/inter-réseaux.
     </p>
   </div>
@@ -176,27 +201,25 @@ cat       - Affiche un chat..`,
   <div class="project-card">
     <h3>Infrastructure sécurisée & centralisée (AD / VLAN / DMZ)</h3>
     <p>
-✓ Segmentation VLAN, plages IP dédiées (infra/users/serveurs/DMZ).<br>
-✓ Déploiement AD (users/groupes/GPO), partages sécurisés (NTFS).<br>
+✓ Segmentation VLAN, plages IP dédiées (infra/users/serveurs/DMZ).
+✓ Déploiement AD (users/groupes/GPO), partages sécurisés (NTFS).
 ✓ Pare-feu, cloisonnement inter-VLAN, reverse proxy <strong>NGINX</strong> en DMZ, web HTTPS + PKI interne.
     </p>
   </div>
 
-</div>
-`,
+</div>`,
 
-  contact: `
-<h2>Contact</h2>
+  contact: 
+  `<h2>Contact</h2>
 <p>
-<strong>Email :</strong> <a href="mailto:matthis.guyomard@hotmail.com">matthis.guyomard@hotmail.com</a><br>
-<strong>Téléphone :</strong> <a href="tel:+33652217407">06 52 21 74 07</a><br>
-<strong>Localisation :</strong> Chatou (78400), France<br>
+<strong>Email :</strong> <a href="mailto:matthis.guyomard@hotmail.com">matthis.guyomard@hotmail.com</a>
+<strong>Téléphone :</strong> <a href="tel:+33652217407">06 52 21 74 07</a>
+<strong>Localisation :</strong> Chatou (78400), France
 <strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/matthis-guyomard/" target="_blank" rel="noopener noreferrer">
 linkedin.com/in/matthis-guyomard
-</a><br><br>
+</a>
 <a href="ressources/guyomard-matthis-cv.pdf" download="guyomard-matthis-cv.pdf">Télécharger mon CV</a>
-</p>
-`,
+</p>`,
 
   cat: `
                 _                       
