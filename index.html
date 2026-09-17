@@ -1,71 +1,168 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio de Matthis GUYOMARD - Administrateur Systèmes, Réseaux & Cybersécurité (Junior)." />
-  <title>Matthis GUYOMARD - Portfolio</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta name="description" content="Matthis.exe : portfolio interactif de Matthis Guyomard, orienté Software Engineering, Infrastructure et Cybersécurité." />
+ <meta name="theme-color" content="#55bdf6" />
+ <meta property="og:title" content="Matthis Guyomard | Interactive Portfolio" />
+ <meta property="og:description" content="Explore my experience, skills and projects as a colorful interactive career quest." />
+ <meta property="og:type" content="website" />
+ <meta name="twitter:card" content="summary" />
+ <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='14' width='64' height='64' fill='%2355bdf6'/%3E%3Cpath d='M15 44V20h8l9 12 9-12h8v24h-8V32l-9 12-9-12v12z' fill='white'/%3E%3C/svg%3E" />
+ <link rel="stylesheet" href="css/style.css" />
+ <title>MATTHIS.EXE | Career Quest Arcade</title>
 </head>
-
 <body>
-  <!-- Loading Overlay -->
-  <div id="loading-overlay" aria-hidden="true">
-    <div class="loading-container">
-      <div class="loading-text">Initialisation du système<span class="blink">...</span></div>
-      <div class="loading-bar">
-        <div class="progress" id="progress"></div>
-      </div>
-      <div class="percentage" id="percentage">0%</div>
-    </div>
+ <div class="start" id="startScreen">
+  <div class="start-card">
+   <div class="boot mono" id="bootText">SYSTEM BOOT... OK<br>PROFILE LOADED... MATTHIS_GUYOMARD<br>CAREER_MAP_ARCADE_DELUXE_5... READY</div>
+   <h1>MATTHIS<span>.EXE</span><br>CAREER QUEST</h1>
+   <p id="startDesc">Explore mon parcours comme un mini-jeu : découvre mes expériences, compétences et projets en parcourant la carte. Joue librement ou passe directement en mode recruteur.</p>
+   <div class="language-pick">
+    <button class="btn small active" id="langFr">🇫🇷 Français</button>
+    <button class="btn small" id="langEn">🇬🇧 English</button>
+   </div>
+   <div class="visitor-preview mono"><span id="visitorLabel">Connexion au serveur visiteurs...</span> <b id="visitorPreview">PLAYER_----</b></div>
+   <div class="start-actions">
+    <button class="btn primary" id="playBtn">▶ Lancer la partie</button>
+    <button class="btn" id="startRecruiterBtn">Mode recruteur</button>
+   </div>
+   <div class="hint mono" id="startHint">PC : ZQSD / WASD / flèches · E / Entrée : interagir · T : terminal · Échap : fermer</div>
   </div>
+ </div>
 
-  <div class="screen">
-    <canvas id="tv-static"></canvas>
+ <main class="shell">
+  <header class="topbar">
+   <div class="brand"><span class="brand-dot"></span> MATTHIS.EXE <span class="mono" style="color:var(--muted);font-size:.7rem">ARCADE QUEST</span></div>
+   <div class="top-meta mono"><b id="serverStatus">● CONNECTING</b> · <span id="playerTop">PLAYER_----</span> · <span id="visitorTop">VISITORS ----</span></div>
+   <div class="actions">
+    <button class="btn small" id="langToggle">FR / EN</button>
+    <div class="sound-control" id="soundControl"><button class="btn small" id="soundBtn" aria-haspopup="true" aria-expanded="false">🔊 SOUND</button><div class="sound-popover" id="soundPopover"><div class="sound-row"><span id="volumeLabel">VOLUME</span><span class="sound-value" id="volumeValue">48%</span></div><input class="volume-slider" id="volumeSlider" type="range" min="0" max="100" value="48" aria-label="Volume" /><div class="sound-tip" id="soundTip">0% coupe la musique et les effets.</div></div></div>
+    <a class="btn small cv-btn" id="cvBtn" href="Matthis_Guyomard_CV.pdf" target="_blank" rel="noreferrer">📄 CV</a>
+    <button class="btn small primary" id="recruiterBtn">RECRUITER MODE</button>
+   </div>
+  </header>
 
-    <div id="terminal">
-      <header>
-        <div class="line">Bienvenue sur le Portfolio de Matthis GUYOMARD</div>
-        <div class="line">
-              .,-:;//;:=,
-         . :H@@@MM@M#H/.,+%;,
-      ,/X+ +M@@M@MM%=,-%HMMM@X/,
-     -+@MM; $M@@MH+-,;XMMMM@MMMM@+-
-    ;@M@@M- XM@X;. -+XXXXXHHH@M@M#@/.
-  ,%MM@@MH ,@%=            .---=-=:=,.
-  -@#@@@MX .,              -%HX$$%%%+;
- =-./@M@M$                  .;@MMMM@MM:
- X@/ -$MM/                    .+MM@@@M$
-,@M@H: :@:                    . -X#@@@@-
-,@@@MMX, .                    /H- ;@M@M=
-.H@@@@M@+,                    %MM+..%#$.
- /MMMM@MMH/.                  XM@MH; -;
-  /%+%$XHH@$=              , .H@@@@MX,
-   .=--------.           -%H.,@@@@@MX,
-   .%MM@@@HHHXX$$$%+- .:$MMX -M@@MM%.
-     =XMMM@MM@MM#H;,-+HMM@M+ /MMMX=
-       =%@M@M#@$-.=$@MM@@@M; %M%=
-         ,:+$+-,/H#MMMMMMM@- -,
-               =++%%%%+/:-.
-        </div>
-        <div class="line">Tapez "help" pour voir les commandes disponibles.</div>
-      </header>
-
-      <main>
-        <div id="output"></div>
-      </main>
-
-      <footer>
-        <div id="input-line">
-          <span id="prompt">&gt;</span>
-          <input type="text" id="cmd" autocomplete="off" spellcheck="false" autofocus />
-        </div>
-      </footer>
+  <div class="layout">
+   <section>
+    <div class="game-frame">
+     <canvas id="game" width="1280" height="780" aria-label="Carte interactive du portfolio" tabindex="0"></canvas>
+     <div class="hud mono">
+      <span class="chip"><b id="hudPlayer">PLAYER_----</b></span>
+      <span class="chip"><span id="lvlLabel">LVL</span> <b id="level">01</b></span>
+      <span class="chip optional"><span id="xpLabel">XP</span> <b id="xpText">0 / 100</b></span>
+      <span class="chip optional"><span id="zoneLabel">ZONES</span> <b><span id="count">0</span>/7</b></span>
+      <span class="chip optional">✦ <b><span id="collectCount">0</span>/12</b></span>
+     </div>
+     <div class="interaction mono" id="interaction"></div>
+     <div class="world-banner" id="worldBanner"><small id="worldBannerKicker">NOUVELLE ZONE</small><strong id="worldBannerTitle">MONDE 1</strong></div>
+     <div class="world-legend"><span class="legend-chip portal"><i></i>PORTAL</span><span class="legend-chip npc"><i></i>NPC</span></div>
     </div>
-  </div>
+    <div class="mobile-gamepad" id="mobileGamepad" aria-label="Contrôles tactiles">
+     <div class="joystick" id="joystick"><div class="joystick-knob" id="joystickKnob"></div></div>
+     <button class="mobile-action" id="actBtn" type="button" aria-label="Interagir">E</button>
+    </div>
+   </section>
 
-  <script src="js/script.js"></script>
+   <aside class="side">
+    <section class="panel">
+     <div class="panel-head"><div><div class="panel-title" id="missionTitle">Mission log</div><div class="panel-sub" id="missionSub">Explore la career map</div></div><span class="mono" style="font-size:.68rem;color:var(--green)" id="progressPct">0%</span></div>
+     <div class="progress"><div id="progress"></div></div>
+     <div class="xp-line mono"><span>XP</span><span id="xpSide">0 / 100</span></div>
+     <div class="progress"><div id="xpBar"></div></div>
+     <div class="story-objective"><div class="eyebrow" id="objectiveEyebrow">OBJECTIF ACTUEL</div><strong id="objectiveTitle">Explorer la Career Map</strong><span id="objectiveSub">Interagis avec les balises ou parle au guide.</span></div><div id="questList" style="margin-top:10px"></div>
+    </section>
+
+    <section class="panel">
+     <div class="panel-head"><div class="panel-title" id="mapTitle">Mini-map</div><div class="panel-sub" id="mapSub">Position en temps réel</div></div>
+     <div class="minimap" id="minimap">
+      <span class="map-zone" style="left:3%;top:10%;width:33%;height:34%"></span><span class="map-zone" style="left:65%;top:10%;width:32%;height:34%"></span>
+      <span class="map-zone" style="left:3%;top:52%;width:33%;height:39%"></span><span class="map-zone" style="left:65%;top:52%;width:32%;height:39%"></span>
+      <span class="map-player" id="mapPlayer"></span>
+     </div>
+     <div class="minimap-legend" id="minimapLegend"><span><i class="beacon"></i>Balises</span><span><i class="portal"></i>Portails</span><span><i class="terminal-icon"></i>Terminal</span><span><i class="collect"></i>Collectibles</span></div>
+     <div class="stats">
+      <div class="stat"><strong id="visitStat">----</strong><span id="visitStatLabel">visite globale</span></div>
+      <div class="stat"><strong id="achievementCount">0/7</strong><span id="achievementLabel">succès</span></div>
+      <div class="stat"><strong id="collectStat">0/12</strong><span id="collectStatLabel">collectibles</span></div>
+     </div>
+    </section>
+
+    <section class="panel">
+     <div class="panel-head"><div class="panel-title" id="achTitle">Achievements</div><div class="panel-sub" id="achSub">Débloque-les en explorant</div></div>
+     <div class="achievements" id="achievements"></div>
+    </section>
+
+    <section class="panel controls" id="controlsText"><b>Contrôles</b><br>ZQSD / WASD / flèches : déplacement<br>E / Entrée : interagir / fermer<br>T : terminal secret<br>Échap : fermer une fenêtre</section>
+   </aside>
+  </div>
+ </main>
+
+ <div class="cinematic" id="cinematic">
+  <section class="cinematic-card" aria-live="polite">
+   <div class="cinematic-visual"><div class="cinematic-grid"></div><div class="cinematic-core"></div></div>
+   <div class="cinematic-copy"><div class="cinematic-kicker" id="cinematicKicker">CONNEXION ÉTABLIE</div><h2 id="cinematicTitle"></h2><p id="cinematicText"></p><div class="cinematic-actions"><span class="cinematic-step" id="cinematicStep">01 / 03</span><button class="btn primary" id="cinematicNext">Continuer →</button></div></div>
+  </section>
+ </div>
+
+ <div class="dialogue" id="dialogue">
+  <div class="dialogue-box"><div class="npc-avatar" id="dialogueAvatar">SYS</div><div><div class="dialogue-name" id="dialogueName">SYSTEM GUIDE</div><div class="dialogue-text" id="dialogueText"></div></div><button class="btn small dialogue-next" id="dialogueNext">OK</button></div>
+ </div>
+
+ <div class="modal-wrap" id="modalWrap">
+  <article class="modal">
+   <div class="modal-top"><div><div class="modal-label" id="modalLabel"></div><h2 id="modalTitle"></h2></div><button class="close" id="closeModal">✕</button></div>
+   <div class="modal-body" id="modalBody"></div>
+  </article>
+ </div>
+
+ <section class="recruiter" id="recruiterView">
+  <div class="wrap">
+   <div class="recruiter-toolbar">
+    <button class="btn small" id="rLangToggle">FR / EN</button>
+    <div class="sound-control" id="rSoundControl"><button class="btn small" id="rSoundBtn" aria-haspopup="true" aria-expanded="false">🔊 SON</button><div class="sound-popover" id="rSoundPopover"><div class="sound-row"><span id="rVolumeLabel">VOLUME</span><span class="sound-value" id="rVolumeValue">48%</span></div><input class="volume-slider" id="rVolumeSlider" type="range" min="0" max="100" value="48" aria-label="Volume" /><div class="sound-tip" id="rSoundTip">0% coupe la musique et les effets.</div></div></div>
+    <a class="btn small" href="Matthis_Guyomard_CV.pdf" target="_blank" rel="noreferrer">📄 CV</a>
+    <button class="btn small primary" id="closeRecruiter">← RETOUR AU JEU</button>
+   </div>
+   <div class="recruiter-head">
+    <div class="recruiter-hero-copy"><div class="r-mode-pill" id="rModeLabel">RECRUITER MODE · FAST ACCESS</div><h1>MATTHIS<br><span>GUYOMARD</span></h1><p class="lead" id="rLead"></p><div class="recruiter-tags"><span>Software</span><span>Infrastructure</span><span>Cybersecurity</span><span>Automation</span></div></div>
+    <div class="recruiter-avatar-card"><div class="avatar-orbit">MG</div><strong>Software Engineer Analyst</strong><span>Apprentice · AXA · 2026:2027</span><small>Paris / Île-de-France</small></div>
+   </div>
+   <div class="recruiter-metrics"><div><strong>9</strong><span>applications auditées</span></div><div><strong>300</strong><span>serveurs Windows</span></div><div><strong>2 500</strong><span>postes administrés</span></div><div><strong>67k+</strong><span>pts TryHackMe</span></div></div>
+   <div class="r-grid" id="recruiterGrid"></div>
+  </div>
+ </section>
+
+ <div class="terminal-wrap" id="terminalWrap">
+  <div class="terminal">
+   <div class="terminal-head"><div class="terminal-title mono">matthis@career-map:~</div><button class="close" id="closeTerminal">✕</button></div>
+   <div class="terminal-output" id="terminalOutput"></div>
+   <form class="terminal-row" id="terminalForm"><span class="prompt">guest@matthis:~$</span><input class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false" aria-label="Terminal command" /></form>
+  </div>
+ </div>
+
+
+ <div class="end-screen" id="endScreen" aria-hidden="true">
+  <div class="confetti-layer" id="confettiLayer"></div>
+  <section class="end-card">
+   <div class="end-kicker" id="endKicker">CAREER QUEST COMPLETE</div>
+   <div class="end-medal">★</div>
+   <h2 id="endTitle">100 % exploré !</h2>
+   <p id="endText">Tu as découvert tout mon parcours. Merci d’avoir joué.</p>
+   <div class="end-summary">
+    <div><strong>7/7</strong><span id="endZonesLabel">zones</span></div>
+    <div><strong id="endCollectibles">0/12</strong><span id="endCollectLabel">collectibles</span></div>
+    <div><strong id="endLevel">01</strong><span id="endLevelLabel">niveau</span></div>
+   </div>
+   <div class="end-actions">
+    <a class="btn primary" href="Matthis_Guyomard_CV.pdf" target="_blank" rel="noreferrer" id="endCvBtn">📄 Voir le CV</a>
+    <a class="btn" href="mailto:matthis.guyomard@hotmail.com" id="endContactBtn">✉ Me contacter</a>
+    <button class="btn" id="endContinueBtn" type="button">Continuer à explorer</button>
+   </div>
+  </section>
+ </div>
+ <div class="toast" id="toast"></div><div class="scanlines"></div>
+ <script src="js/script.js"></script>
 </body>
 </html>
