@@ -3,25 +3,42 @@
 <head>
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <meta name="description" content="Matthis.exe : portfolio interactif de Matthis Guyomard, orienté Software Engineering, Infrastructure et Cybersécurité." />
+ <meta name="description" content="Portfolio de Matthis Guyomard, Software Engineer orienté cybersécurité, infrastructure, DevSecOps et automatisation. Découvrez ses expériences, projets et compétences." />
  <meta name="theme-color" content="#55bdf6" />
- <meta property="og:title" content="Matthis Guyomard | Interactive Portfolio" />
- <meta property="og:description" content="Explore my experience, skills and projects as a colorful interactive career quest." />
  <meta property="og:type" content="website" />
- <meta name="twitter:card" content="summary" />
+ <meta property="og:url" content="https://www.matthisguyomard.com/" />
+ <meta property="og:title" content="Matthis Guyomard | Software Engineer" />
+ <meta property="og:description" content="Portfolio de Matthis Guyomard — Software Engineering, cybersécurité, infrastructure et DevSecOps." />
+ <meta property="og:locale" content="fr_FR" />
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:title" content="Matthis Guyomard | Software Engineer" />
+ <meta name="twitter:description" content="Software Engineering, cybersécurité, infrastructure et DevSecOps dans un portfolio arcade interactif." />
+ <link rel="canonical" href="https://www.matthisguyomard.com/" />
  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='14' width='64' height='64' fill='%2355bdf6'/%3E%3Cpath d='M15 44V20h8l9 12 9-12h8v24h-8V32l-9 12-9-12v12z' fill='white'/%3E%3C/svg%3E" />
  <link rel="stylesheet" href="css/style.css" />
- <title>MATTHIS.EXE | Career Quest Arcade</title>
+ <title>Matthis Guyomard | Software Engineer · Cybersécurité · Infrastructure</title>
+ <script type="application/ld+json">
+ {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Matthis Guyomard",
+  "url": "https://www.matthisguyomard.com/",
+  "jobTitle": "Software Engineer",
+  "sameAs": ["https://www.linkedin.com/in/matthis-guyomard/"],
+  "knowsAbout": ["Software Engineering", "Cybersecurity", "Infrastructure", "DevSecOps", "Automation"]
+ }
+ </script>
+ <!-- Ajouter plus tard ressources/og-image.png (1200 × 630), puis les balises og:image et twitter:image. -->
 </head>
 <body>
  <div class="start" id="startScreen">
   <div class="start-card">
    <div class="boot mono" id="bootText">SYSTEM BOOT... OK<br>PROFILE LOADED... MATTHIS_GUYOMARD<br>CAREER_MAP_ARCADE_DELUXE_5... READY</div>
-   <h1>MATTHIS<span>.EXE</span><br>CAREER QUEST</h1>
+   <h1>MATTHIS<span>.EXE</span><br>CAREER QUEST <span class="hero-identity">Matthis Guyomard · Software Engineer</span></h1>
    <p id="startDesc">Explore mon parcours comme un mini-jeu : découvre mes expériences, compétences et projets en parcourant la carte. Joue librement ou passe directement en mode recruteur.</p>
    <div class="language-pick">
-    <button class="btn small active" id="langFr">🇫🇷 Français</button>
-    <button class="btn small" id="langEn">🇬🇧 English</button>
+    <button class="btn small active" id="langFr" type="button" aria-pressed="true">🇫🇷 Français</button>
+    <button class="btn small" id="langEn" type="button" aria-pressed="false">🇬🇧 English</button>
    </div>
    <div class="visitor-preview mono"><span id="visitorLabel">Connexion au serveur visiteurs...</span> <b id="visitorPreview">PLAYER_----</b></div>
    <div class="start-actions">
@@ -37,17 +54,17 @@
    <div class="brand"><span class="brand-dot"></span> MATTHIS.EXE <span class="mono" style="color:var(--muted);font-size:.7rem">ARCADE QUEST</span></div>
    <div class="top-meta mono"><b id="serverStatus">● CONNECTING</b> · <span id="playerTop">PLAYER_----</span> · <span id="visitorTop">VISITORS ----</span></div>
    <div class="actions">
-    <button class="btn small" id="langToggle">FR / EN</button>
+    <button class="btn small" id="langToggle" type="button" aria-label="Passer le site en anglais">FR / EN</button>
     <div class="sound-control" id="soundControl"><button class="btn small" id="soundBtn" aria-haspopup="true" aria-expanded="false">🔊 SOUND</button><div class="sound-popover" id="soundPopover"><div class="sound-row"><span id="volumeLabel">VOLUME</span><span class="sound-value" id="volumeValue">48%</span></div><input class="volume-slider" id="volumeSlider" type="range" min="0" max="100" value="48" aria-label="Volume" /><div class="sound-tip" id="soundTip">0% coupe la musique et les effets.</div></div></div>
-    <a class="btn small cv-btn" id="cvBtn" href="Matthis_Guyomard_CV.pdf" target="_blank" rel="noreferrer">📄 CV</a>
-    <button class="btn small primary" id="recruiterBtn">RECRUITER MODE</button>
+    <a class="btn small cv-btn" id="cvBtn" href="ressources/Matthis_Guyomard_CV.pdf" target="_blank" rel="noopener noreferrer">📄 CV</a>
+    <button class="btn small primary" id="recruiterBtn" type="button">VUE RECRUTEUR</button>
    </div>
   </header>
 
   <div class="layout">
    <section>
     <div class="game-frame">
-     <canvas id="game" width="1280" height="780" aria-label="Carte interactive du portfolio" tabindex="0"></canvas>
+     <canvas id="game" width="1280" height="780" role="img" aria-label="Carte interactive du parcours de Matthis Guyomard. Une vue recruteur accessible sans jeu est disponible." tabindex="0"></canvas>
      <div class="hud mono">
       <span class="chip"><b id="hudPlayer">PLAYER_----</b></span>
       <span class="chip"><span id="lvlLabel">LVL</span> <b id="level">01</b></span>
@@ -99,8 +116,8 @@
   </div>
  </main>
 
- <div class="cinematic" id="cinematic">
-  <section class="cinematic-card" aria-live="polite">
+ <div class="cinematic" id="cinematic" aria-hidden="true">
+  <section class="cinematic-card" role="dialog" aria-modal="true" aria-labelledby="cinematicTitle" aria-live="polite">
    <div class="cinematic-visual"><div class="cinematic-grid"></div><div class="cinematic-core"></div></div>
    <div class="cinematic-copy"><div class="cinematic-kicker" id="cinematicKicker">CONNEXION ÉTABLIE</div><h2 id="cinematicTitle"></h2><p id="cinematicText"></p><div class="cinematic-actions"><span class="cinematic-step" id="cinematicStep">01 / 03</span><button class="btn primary" id="cinematicNext">Continuer →</button></div></div>
   </section>
@@ -110,33 +127,40 @@
   <div class="dialogue-box"><div class="npc-avatar" id="dialogueAvatar">SYS</div><div><div class="dialogue-name" id="dialogueName">SYSTEM GUIDE</div><div class="dialogue-text" id="dialogueText"></div></div><button class="btn small dialogue-next" id="dialogueNext">OK</button></div>
  </div>
 
- <div class="modal-wrap" id="modalWrap">
-  <article class="modal">
-   <div class="modal-top"><div><div class="modal-label" id="modalLabel"></div><h2 id="modalTitle"></h2></div><button class="close" id="closeModal">✕</button></div>
+ <div class="modal-wrap" id="modalWrap" aria-hidden="true">
+  <article class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+   <div class="modal-top"><div><div class="modal-label" id="modalLabel"></div><h2 id="modalTitle"></h2></div><button class="close" id="closeModal" type="button" aria-label="Fermer la fenêtre">✕</button></div>
    <div class="modal-body" id="modalBody"></div>
   </article>
  </div>
 
- <section class="recruiter" id="recruiterView">
+ <section class="recruiter" id="recruiterView" aria-hidden="true" aria-labelledby="recruiterTitle">
   <div class="wrap">
    <div class="recruiter-toolbar">
-    <button class="btn small" id="rLangToggle">FR / EN</button>
+    <button class="btn small" id="rLangToggle" type="button" aria-label="Passer le site en anglais">FR / EN</button>
     <div class="sound-control" id="rSoundControl"><button class="btn small" id="rSoundBtn" aria-haspopup="true" aria-expanded="false">🔊 SON</button><div class="sound-popover" id="rSoundPopover"><div class="sound-row"><span id="rVolumeLabel">VOLUME</span><span class="sound-value" id="rVolumeValue">48%</span></div><input class="volume-slider" id="rVolumeSlider" type="range" min="0" max="100" value="48" aria-label="Volume" /><div class="sound-tip" id="rSoundTip">0% coupe la musique et les effets.</div></div></div>
-    <a class="btn small" href="Matthis_Guyomard_CV.pdf" target="_blank" rel="noreferrer">📄 CV</a>
+    <a class="btn small" href="ressources/Matthis_Guyomard_CV.pdf" target="_blank" rel="noopener noreferrer">📄 CV</a>
     <button class="btn small primary" id="closeRecruiter">← RETOUR AU JEU</button>
    </div>
    <div class="recruiter-head">
-    <div class="recruiter-hero-copy"><div class="r-mode-pill" id="rModeLabel">RECRUITER MODE · FAST ACCESS</div><h1>MATTHIS<br><span>GUYOMARD</span></h1><p class="lead" id="rLead"></p><div class="recruiter-tags"><span>Software</span><span>Infrastructure</span><span>Cybersecurity</span><span>Automation</span></div></div>
+    <div class="recruiter-hero-copy"><div class="r-mode-pill" id="rModeLabel">MODE RECRUTEUR · ACCÈS RAPIDE</div><h2 id="recruiterTitle">MATTHIS<br><span>GUYOMARD</span></h2><p class="recruiter-position">Software Engineer · Cybersécurité · Infrastructure · DevSecOps</p><p class="lead" id="rLead">Profil orienté Software Engineering, Infrastructure et Cybersécurité, avec une forte appétence pour l'automatisation. Après des expériences chez Vinci Construction Grands Projets et Axens, je rejoins AXA le 28 septembre 2026 comme Software Engineer Analyst Apprentice.</p><div class="recruiter-tags"><span>Software</span><span>Infrastructure</span><span>Cybersecurity</span><span>Automation</span></div></div>
     <div class="recruiter-avatar-card"><div class="avatar-orbit">MG</div><strong>Software Engineer Analyst</strong><span>Apprentice · AXA · 2026:2027</span><small>Paris / Île-de-France</small></div>
    </div>
    <div class="recruiter-metrics"><div><strong>9</strong><span>applications auditées</span></div><div><strong>300</strong><span>serveurs Windows</span></div><div><strong>2 500</strong><span>postes administrés</span></div><div><strong>67k+</strong><span>pts TryHackMe</span></div></div>
-   <div class="r-grid" id="recruiterGrid"></div>
+   <div class="r-grid" id="recruiterGrid">
+    <article class="r-card"><div class="r-date">PROCHAINE QUÊTE</div><h3>AXA · Software Engineer Analyst Apprentice</h3><p>28 septembre 2026 · Juin 2027</p><p>Software Engineering, sécurité logicielle SAST, SCA et DAST, DevSecOps, Open Source et documentation.</p></article>
+    <article class="r-card"><div class="r-date">EXPÉRIENCE</div><h3>Axens · Infrastructure &amp; Cybersecurity Intern</h3><p>Juin 2026 · Août 2026</p><p>Audits SonarQube, administration Windows et projet Power BI automatisé avec Power Automate.</p></article>
+    <article class="r-card"><div class="r-date">EXPÉRIENCE</div><h3>Vinci Construction Grands Projets</h3><p>Août 2025 · Octobre 2025</p><p>Application Python utilisant l’API Tanium pour automatiser la création de fiches serveurs.</p></article>
+    <article class="r-card"><div class="r-date">FORMATION</div><h3>Efrei · IPSSI · 42</h3><p>Bachelor Cybersécurité &amp; Ethical Hacking à l’Efrei, cursus Systèmes, Réseaux &amp; Cybersécurité à l’IPSSI et Piscine 42 réussie.</p></article>
+    <article class="r-card wide"><div class="r-date">COMPÉTENCES</div><h3>Cybersécurité, systèmes et automatisation</h3><p>Python · PowerShell · Ansible · Power BI · Windows Server · Active Directory · Linux · SonarQube · SentinelOne · Tanium · Wireshark · Nmap</p></article>
+    <article class="r-card wide"><div class="r-date">CONTACT</div><h3>Échanger avec Matthis Guyomard</h3><div class="r-links"><a class="btn primary" href="mailto:matthis.guyomard@hotmail.com">✉ Email</a><a class="btn" href="https://www.linkedin.com/in/matthis-guyomard/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn" href="ressources/Matthis_Guyomard_CV.pdf" target="_blank" rel="noopener noreferrer">📄 CV</a></div></article>
+   </div>
   </div>
  </section>
 
- <div class="terminal-wrap" id="terminalWrap">
-  <div class="terminal">
-   <div class="terminal-head"><div class="terminal-title mono">matthis@career-map:~</div><button class="close" id="closeTerminal">✕</button></div>
+ <div class="terminal-wrap" id="terminalWrap" aria-hidden="true">
+  <div class="terminal" role="dialog" aria-modal="true" aria-labelledby="terminalTitle">
+   <div class="terminal-head"><div class="terminal-title mono" id="terminalTitle">matthis@career-map:~</div><button class="close" id="closeTerminal" type="button" aria-label="Fermer le terminal">✕</button></div>
    <div class="terminal-output" id="terminalOutput"></div>
    <form class="terminal-row" id="terminalForm"><span class="prompt">guest@matthis:~$</span><input class="terminal-input" id="terminalInput" autocomplete="off" spellcheck="false" aria-label="Terminal command" /></form>
   </div>
@@ -156,13 +180,13 @@
     <div><strong id="endLevel">01</strong><span id="endLevelLabel">niveau</span></div>
    </div>
    <div class="end-actions">
-    <a class="btn primary" href="Matthis_Guyomard_CV.pdf" target="_blank" rel="noreferrer" id="endCvBtn">📄 Voir le CV</a>
+    <a class="btn primary" href="ressources/Matthis_Guyomard_CV.pdf" target="_blank" rel="noopener noreferrer" id="endCvBtn">📄 Voir le CV</a>
     <a class="btn" href="mailto:matthis.guyomard@hotmail.com" id="endContactBtn">✉ Me contacter</a>
     <button class="btn" id="endContinueBtn" type="button">Continuer à explorer</button>
    </div>
   </section>
  </div>
- <div class="toast" id="toast"></div><div class="scanlines"></div>
- <script src="js/script.js"></script>
+ <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div><div class="scanlines" aria-hidden="true"></div>
+ <script src="js/script.js" defer></script>
 </body>
 </html>
